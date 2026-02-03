@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Сити-Ферма</title>
+    <script>
+          function updateData() {
+              fetch('/data')
+                  .then(response => response.json())
+                  .then(data => {
+                      document.getElementById('temp').innerText = "Температура" + data.temperature + "*C";
+                      document.getElementById('humidity').innerText = "Влажность" + data.humidity + "%";
+                  });
+          }
+          setInterval(updateData, 5000);
+    </script>
+</head>
+</body>
+     <h1>Сити-Ферма</h1>
+     <p id="temp">Температура: --*C<p>
+     <p id="humidity">Влажность: --%<p>
+</body>
+</html>
